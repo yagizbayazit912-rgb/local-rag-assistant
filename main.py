@@ -4,7 +4,6 @@ import math
 from sentence_transformers import SentenceTransformer
 
 print("Sistem başlatılıyor, çok dilli yerel model yükleniyor...")
-# Türkçe anlayan çok dilli modele geçiş yapıldı
 model = SentenceTransformer('paraphrase-multilingual-MiniLM-L12-v2')
 
 def kosinus_benzerligi(vec1, vec2):
@@ -35,10 +34,8 @@ def veritabanindan_bilgi_getir(soru):
             en_iyi_skor = skor
             en_iyi_metin = metin
             
-    # DEBUG: Arka planda eşleşme skorunu görmek için eklendi
     print(f"\n[Debug] En iyi eşleşme skoru: {en_iyi_skor:.4f}")
             
-    # Eşik değeri Türkçeye uyum sağlaması için düşürüldü
     if en_iyi_skor < 0.15:
         return ""
         
@@ -48,12 +45,12 @@ def asistana_sor(kullanici_sorusu):
     baglam_metni = veritabanindan_bilgi_getir(kullanici_sorusu)
     
     if baglam_metni:
-        return f"Dune kitabından bulduğum en alakalı paragraf: \n\n'{baglam_metni}'"
+        return f"Kitaptan bulduğum en alakalı paragraf: \n\n'{baglam_metni}'"
     else:
-        return "Üzgünüm, kitabın içinde bu soruyla ilgili mantıklı bir eşleşme bulamadım."
+        return "Üzgünüm, veri tabanında bu soruyla ilgili geçerli bir bağlam bulunamadı."
 
 def main():
-    print("\n--- GERÇEK RAG ASİSTANI BAŞLATILDI ---")
+    print("\n--- YEREL RAG ASİSTANI BAŞLATILDI ---")
     print("Çıkmak için 'q' veya 'cikis' yazabilirsiniz.\n")
     
     while True:
