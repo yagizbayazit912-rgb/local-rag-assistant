@@ -1,30 +1,23 @@
-\# Yerel RAG (Retrieval-Augmented Generation) Asistanı
+# 📚 Local RAG Assistant (Offline & Privacy-First)
 
+A fully local, offline Retrieval-Augmented Generation (RAG) assistant built with Python. This project demonstrates a privacy-first AI architecture where all document processing, vector embeddings, and LLM text generation occur strictly on the local machine without relying on external APIs.
 
+## 🚀 Key Features
+* **100% Offline & Private:** No data is sent to external servers. Ideal for sensitive document analysis.
+* **Local Vector Database:** Utilizes SQLite and cosine similarity for lightweight, dependency-free vector search.
+* **Hallucination Control:** Strict prompt engineering ensures the model only answers based on the provided context, preventing AI hallucinations.
+* **Modern UI:** Built with Streamlit for a clean, chat-based user experience.
 
-Bu proje, tamamen çevrimdışı çalışan ve RAG mimarisini kullanan bir Soru-Cevap yapay zeka asistanıdır. Microsoft Foundry Local konsepti referans alınarak, dış ağ bağlantısına ihtiyaç duymayan yerel bir vektör arama motoru kurgulanmıştır.
+## 🛠️ Tech Stack
+* **Language:** Python
+* **LLM Engine:** Qwen/Qwen2.5-3B-Instruct (via Hugging Face `transformers` pipeline)
+* **Embedding Model:** `paraphrase-multilingual-MiniLM-L12-v2` (Sentence-Transformers)
+* **Database:** SQLite (Custom JSON Vector Storage)
+* **Frontend:** Streamlit
 
+## ⚙️ Installation & Usage
 
-
-\## 🚀 Proje Mimarisi
-
-\* \*\*Veri Katmanı:\*\* Metin parçaları ve gömme (embedding) vektörleri, sunucusuz ve hafif bir yapı sunan \*\*SQLite\*\* üzerinde depolanmaktadır.
-
-\* \*\*Geri Getirme (Retrieval):\*\* Kullanıcı sorguları vektörize edilerek, veri tabanındaki belgelerle \*\*Kosinüs Benzerliği (Cosine Similarity)\*\* algoritması üzerinden eşleştirilir.
-
-\* \*\*Üretim (Generation):\*\* En yüksek eşleşme skoruna sahip bağlam, sistem istemiyle (prompt engineering) birleştirilerek yerel LLM'e (Büyük Dil Modeli) aktarılır. Bu sayede modelin halüsinasyon görmesi engellenir.
-
-
-
-\## 🛠️ Kurulum ve Çalıştırma
-
-1\. Repoyu bilgisayarınıza klonlayın.
-
-2\. Gerekli SDK'yı kurun: `pip install foundry-local-sdk`
-
-3\. Veri tabanını ve tabloları başlatmak için: `python veri\_hazirlik.py`
-
-4\. Belgeleri vektörize edip kaydetmek için: `python veri\_isleme.py`
-
-5\. RAG Asistanı CLI arayüzünü başlatmak için: `python main.py`
-
+**Step 1: Clone the repository**
+```bash
+git clone [https://github.com/yagizbayazit912-rgb/local-rag-assistant.git](https://github.com/your-username/local-rag-assistant.git)
+cd local-rag-assistant
