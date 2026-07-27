@@ -19,5 +19,5 @@ A fully local, offline Retrieval-Augmented Generation (RAG) assistant built with
 
 **Step 1: Clone the repository**
 ```bash
-git clone [https://github.com/yagizbayazit912-rgb/local-rag-assistant.git](https://github.com/your-username/local-rag-assistant.git)
+git clone https://github.com/yagizbayazit912-rgb/local-rag-assistant.git
 cd local-rag-assistant
