@@ -1,5 +1,4 @@
 streamlit
 numpy
-sentence-transformers
-transformers
-torch
+pymupdf
+foundry-local-sdk
