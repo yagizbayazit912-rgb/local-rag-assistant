@@ -45,6 +45,7 @@ Answer (grounded in retrieved context) + cited source chunks
 
 Windows:
 ```bash
+
 winget install --id Microsoft.FoundryLocal -e
 ```
 macOS:
